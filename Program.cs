@@ -7,8 +7,8 @@ public class Program {
   // Actor in the game
   class Actor  {
     protected String _name;      // can be accessed by the subclasses
-    private int x;    // x cordinate
-    private int y;    // y cordinate
+    private int x;    // x coordinate
+    private int y;    // y coordinate
 
     // Constructor
     public Actor (String n) {
