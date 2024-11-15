@@ -1,5 +1,7 @@
 {
-  "image": "mcr.microsoft.com/vscode/devcontainers/dotnet:5.0",
-  "features": {
-  }
+  "name": "C# Polymorphic Actor",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/dotnet:1-8.0",
+
+  "features": {}
 }
