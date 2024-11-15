@@ -1,8 +1,4 @@
-﻿using System;
-// for ListOf
-using System.Collections.Generic;
-
-public class Program
+﻿public class Program
 {
 
   // Actor in the game
