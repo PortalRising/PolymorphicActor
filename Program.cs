@@ -19,6 +19,11 @@ public class Program
       x = y = 0;        // initialise cordinates
     }
 
+    public string GetName()
+    {
+      return name;
+    }
+
     // A getter to get the coordinates of the object 
     public (int, int) GetCoordinates()
     {
@@ -45,6 +50,15 @@ public class Program
     public void DisplayCoordinates()
     {
       Console.WriteLine("{0} is at ({1}, {2})", name, x, y);
+    }
+
+    /// <summary>
+    /// Move the actor by the provided offset vector 
+    /// and then return the new position 
+    /// </summary>
+    public (int, int) Move((int, int) offsetVector)
+    {
+      return Move(offsetVector.Item1, offsetVector.Item2);
     }
 
     /// <summary>
@@ -196,12 +210,15 @@ public class Program
       actor.Draw();
 
       // Set and display their initial position
+      (int, int) startCoordinates = GetRandomCoordinate(-10, 10);
+      actor.SetCoordinates(startCoordinates);
       actor.DisplayCoordinates();
 
+      Console.WriteLine("Moving {0}...", actor.GetName());
+
       // Create a movement for the actor to consume
-      int offsetX = random.Next(-10, 10);
-      int offsetY = random.Next(-10, 10);
-      actor.Move(offsetX, offsetY);
+      (int, int) moveVector = GetRandomCoordinate(-10, 10);
+      actor.Move(moveVector);
 
       // Output the new position of the actor
       actor.DisplayCoordinates();
